@@ -16,15 +16,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<style>
 /* Color del título */         
 .header{
-	background: #1EBBFF;
+	background: #309CD3;
 }
 .header p{
 	text-align: center;
-	font-size: 16px;
+	font-size: 20px;
 	color: #fff;
 	padding: 16px;
 	margin: 0;
-	font-weight: 700;
+	font-weight: 900;
 }
 span{
 	color: #fff;
@@ -80,7 +80,13 @@ span{
 	color: #fff;
 }
 
-    </style>
+#numero {
+	background: #1EBBFF;
+	color: black;
+}
+
+
+</style>
 
 
 </head>
@@ -112,47 +118,49 @@ span{
         <div class="row commonbutton">
             <!-- first row -->
             	<div class="col-md-4">
-            		<input type="submit" name="" value="7">
+            		<input type="submit" name="" value="7" id="numero">
             	</div>
             	<div class="col-md-4">
-            		<input type="submit" name="" value="8" class="">
+            		<input type="submit" name="" value="8" id="numero">
             	</div>
             	<div class="col-md-4">
-            		<input type="submit" name="" value="9" class="">
+            		<input type="submit" name="" value="9" id="numero">
             	</div>
             <!-- second row -->
             	<div class="col-md-4">
-            		<input type="submit" name="" value="4" class="">
+            		<input type="submit" name="" value="4" id="numero">
             	</div>
             	<div class="col-md-4">
-        			<input type="submit" name="" value="5" class="">
+        			<input type="submit" name="" value="5" id="numero">
             	</div>
             	<div class="col-md-4">
-            		<input type="submit" name="" value="6" class="">
+            		<input type="submit" name="" value="6" id="numero">
             	</div>
             <!-- third row -->
             	<div class="col-md-4">
-            		<input type="submit" name="" value="1" class="">
+            		<input type="submit" name="" value="1" id="numero">
             	</div>
             	<div class="col-md-4">
-            		<input type="submit" name="" value="2" class="">
+            		<input type="submit" name="" value="2" id="numero">
             	</div>
             	<div class="col-md-4">
-            		<input type="submit" name="" value="3" class="">
+            		<input type="submit" name="" value="3" id="numero">
             	</div>
 			<!-- fourth row -->
 			<div class="row commonbutton">
-			<div class="col-md-4">
-            <input type="submit" name="" value=" " class="" disabled>
-            </div>
-			<div class="col-md-4">
-                	<input type="submit" name="" value="0" class="">
-                </div>
-                <div class="col-md-4">
-                	<input type="submit" name="" value="K" class="">
-                </div>
-			</div>
-        </div> 
+				<div class="col-md-12">
+				<div class="col-md-4">
+            	<input type="submit" name="" value=" " class="" disabled id="numero">
+            	</div>
+				<div class="col-md-4">
+            	    	<input type="submit" name="" value="0" id="numero">
+            	    </div>
+            	    <div class="col-md-4">
+            	    	<input type="submit" name="" value="K" id="numero">
+            	    </div>
+				</div>
+			</div> 
+        	</div> 
         <div class="row commonbutton">
             <div class="col-md-12">
             	<div class="row">
