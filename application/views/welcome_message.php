@@ -109,7 +109,8 @@ span{
         	<!-- start of textbox -->
         	<div class="row teaxtbox">
             <div class="col-md-12 padding-reset">
-        		<input type="text" name="" value="">
+        		<input type="text" id="display" name="display">
+				<p></p>
             </div>
         	</div>
         	<!-- end of textbox -->
@@ -118,33 +119,33 @@ span{
         <div class="row commonbutton">
             <!-- first row -->
             	<div class="col-md-4">
-            		<input type="submit" name="" value="7" id="numero">
+            		<input onclick="appendNumber(7)" type="submit" name="" value="7" id="numero">
             	</div>
             	<div class="col-md-4">
-            		<input type="submit" name="" value="8" id="numero">
+            		<input onclick="appendNumber(8)" type="submit" name="" value="8" id="numero">
             	</div>
             	<div class="col-md-4">
-            		<input type="submit" name="" value="9" id="numero">
+            		<input onclick="appendNumber(9)" type="submit" name="" value="9" id="numero">
             	</div>
             <!-- second row -->
             	<div class="col-md-4">
-            		<input type="submit" name="" value="4" id="numero">
+            		<input onclick="appendNumber(4)" type="submit" name="" value="4" id="numero">
             	</div>
             	<div class="col-md-4">
-        			<input type="submit" name="" value="5" id="numero">
+        			<input onclick="appendNumber(5)" type="submit" name="" value="5" id="numero">
             	</div>
             	<div class="col-md-4">
-            		<input type="submit" name="" value="6" id="numero">
+            		<input onclick="appendNumber(6)" type="submit" name="" value="6" id="numero">
             	</div>
             <!-- third row -->
             	<div class="col-md-4">
-            		<input type="submit" name="" value="1" id="numero">
+            		<input onclick="appendNumber(1)" type="submit" name="" value="1" id="numero">
             	</div>
             	<div class="col-md-4">
-            		<input type="submit" name="" value="2" id="numero">
+            		<input onclick="appendNumber(2)" type="submit" name="" value="2" id="numero">
             	</div>
             	<div class="col-md-4">
-            		<input type="submit" name="" value="3" id="numero">
+            		<input onclick="appendNumber(3)" type="submit" name="" value="3" id="numero">
             	</div>
 			<!-- fourth row -->
 			<div class="row commonbutton">
@@ -171,10 +172,42 @@ span{
                 		<input type="submit" name="" value="Aceptar" id="aceptar">
                 	</div>
             </div>
+			<input type="text" id="display" name="display">
             </div> 
         </div> 
         </div>
+		<input type="text" id="input1" oninput="updateInput2()">
+		<input type="text" id="input2">
     </div>
     </div>
 </body>
+
+
 </html>
+
+<script>
+	function updateInput2() {
+	var input1Value = document.getElementById("input1").value;
+	document.getElementById("input2").value = input1Value;
+}
+
+let display = document.getElementById('display');
+        let equation = '';
+        function appendNumber(number) {
+            equation += number;
+            updateDisplay();
+        }
+		function appendKey() {
+            equation += "K";
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            display.textContent = equation || '0';
+        }
+        function clearDisplay() {
+            equation = '';
+            updateDisplay();
+        }
+
+</script>
