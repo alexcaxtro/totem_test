@@ -15,11 +15,7 @@ class User_model extends CI_Model {
         $query = $this->db->get("users");
         return $query->result();        
     }
-
-    //function listUpdateUsers() {
-    //    $query = $this->db->get('users');
-    //    return $query->result_array();
-    //}
+// funcion para actualizar los usuarios no se ha realizado pruebas pero la de arriba tambien pudiera funcionar
     public function getUsers() {
         $query = $this->db->get("users");
         return $query->result();

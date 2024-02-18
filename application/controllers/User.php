@@ -50,17 +50,14 @@ class User extends CI_Controller
         $data['users'] = $this->user_model->listUsers();
         $this->load->view("user/list_user",$data);
     } 
-    //public function listUpdateUsers() {
-    //    $users = $this->user_model->listUpdateUsers();
-    //    header('Content-Type: application/json');
-    //    echo json_encode($users);
-    //}
-
+    
+    // funcion para actualizar la tabla de usuarios 
+    
     public function listUpdateUsers() {
         $this->load->model('User_model');
         $users = $this->User_model->getUsers();
-        header('Content-Type: application/json');
-        echo json_encode($users);
+        header('Content-Type: application/json'); //el servidor está diciendo al cliente que los datos que se envían de vuelta están en formato JSON
+        echo json_encode($users);  //conviert un array PHP $users en una cadena JSON JavaScript Object Notation formatted string
     }
 
 }
