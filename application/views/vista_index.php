@@ -1,14 +1,20 @@
 <?php $this->load->view("includes/header");?>
-
+<div class="container">
+  <h1>Seleccione</h1>
+</div>
 <div align="center">
     <form name="form1" action="<?=base_url()?>index/vistarut" method="post">
         
         <input type="submit" value="General" class="boton button4">
-        <input type="submit" value="Preferencial" class="boton button4">
     </form>
-
+    <br>
+    <br>
+    <a href="<?=site_url('user/addUser')?>" class="btn btn-primary">Agregar Usuarios</a>
+    <a href="<?=site_url('user/listUser')?>" class="btn btn-primary">Listar Usuarios</a>
+<br><br>
     <label for="rut">Enter a RUT (e.g., 12345678-9 or 12345678):</label><br>
     <input type="text" id="rut" name="rut"><br>
+    <br>
     <button onclick="validateRUT()">Verify RUT</button>
     <p id="result"></p>
 </div>

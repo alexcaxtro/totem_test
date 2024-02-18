@@ -39,5 +39,28 @@ class User extends CI_Controller
             $this->load->view("/user/add_user");
         }    
     }
+    public function addUser()
+
+    {
+        $this->load->view("/user/add_user");
+    }
     
+    public function listUser()
+    {
+        $data['users'] = $this->user_model->listUsers();
+        $this->load->view("user/list_user",$data);
+    } 
+    //public function listUpdateUsers() {
+    //    $users = $this->user_model->listUpdateUsers();
+    //    header('Content-Type: application/json');
+    //    echo json_encode($users);
+    //}
+
+    public function listUpdateUsers() {
+        $this->load->model('User_model');
+        $users = $this->User_model->getUsers();
+        header('Content-Type: application/json');
+        echo json_encode($users);
+    }
+
 }
