@@ -21,7 +21,7 @@
                         <label for="address" class="form-label">Address</label>
                         <input type="text" name="address" class="form-control" id="address" placeholder="Address">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button id="refreshButton" type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
             <a href="<?=site_url('index')?>" class="btn btn-danger">Ir atrás</a>
@@ -30,3 +30,15 @@
 </div>
 
 <?php $this->load->view("includes/footer");?>
+
+<script>
+document.getElementById('refreshButton').addEventListener('click', function() {
+    var nocache = new Date().getTime();
+    $.ajax({
+        url: '<?php echo base_url('user/refreshView'); ?>',
+        success: function(response) {
+            $('#vistaPantalla').html(response);
+        }
+    });
+});
+</script>

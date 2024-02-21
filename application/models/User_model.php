@@ -21,5 +21,9 @@ class User_model extends CI_Model {
         return $query->result();
     }
 
-
+    function listUsersActive() {
+        $this->db->where('estado', 1);
+        $query = $this->db->get("users");
+        return $query->result();        
+    }
 }

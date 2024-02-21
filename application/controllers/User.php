@@ -60,4 +60,24 @@ class User extends CI_Controller
         echo json_encode($users);  //conviert un array PHP $users en una cadena JSON JavaScript Object Notation formatted string
     }
 
+    // public function refreshView() {
+    //     $this->load->model('model_totem_farma');
+    //     $data['antecedentes'] = $this->model_totem_farma->getAntecedentes();
+    //     $this->load->view('vista_pantalla', $data);
+    // }
+
+    public function refreshView() {
+        $this->load->model('User_model');
+        $users = $this->User_model->listUsersActive();
+        //$data['users'] = $this->user_model->listUsersActive();
+        //$data['antecedentes'] = $this->model_totem_farma->getAntecedentes();
+        header('Content-Type: application/json');
+        echo json_encode($users);
+    }
+
+    public function viewScreen()
+    {
+        $data['users'] = $this->user_model->listUsersActive();
+        $this->load->view('/user/vista_pantalla',$data);
+    }
 }
