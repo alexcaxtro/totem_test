@@ -80,4 +80,77 @@ class User extends CI_Controller
         $data['users'] = $this->user_model->listUsersActive();
         $this->load->view('/user/vista_pantalla',$data);
     }
+
+
+    //
+    // // Cargar la librería text_to_speech
+    // $this->load->library('text_to_speech');
+    
+    // // Establecer la clave de API de Google
+    // $this->text_to_speech->setKey('TU_CLAVE_DE_API');
+    
+    // // Establecer el idioma y la voz del audio
+    // $this->text_to_speech->setLanguage('es-ES');
+    // $this->text_to_speech->setVoice('es-ES-Standard-A');
+    
+    // // Establecer el formato del audio
+    // $this->text_to_speech->setOutputFormat('mp3');
+    
+    // // Obtener el nombre del paciente desde la base de datos
+    // $nombre = $this->db->get_where('pacientes', array('id' => $id))->row()->nombre;
+    
+    // // Generar el audio con el nombre del paciente
+    // $this->text_to_speech->synthesize($nombre);
+    
+    // // Guardar el audio en un archivo
+    // $this->text_to_speech->save('audio/'.$nombre.'.mp3');
+    
+    // // Reproducir el audio
+    // $this->text_to_speech->play('audio/'.$nombre.'.mp3');
+    // 
+    
+    // Instala la biblioteca usando Composer
+// composer require google/cloud-text-to-speech
+
+// En tu controlador o clase
+// use Google\Cloud\TextToSpeech\V1\TextToSpeechClient;
+// use Google\Cloud\TextToSpeech\V1\AudioConfig;
+// use Google\Cloud\TextToSpeech\V1\SynthesisInput;
+// use Google\Cloud\TextToSpeech\V1\VoiceSelectionParams;
+
+// class PacientesController extends CI_Controller {
+//     public function decirNombre($nombre) {
+//         // Configuración del cliente
+//         $textToSpeechClient = new TextToSpeechClient();
+        
+//         // Configuración de voz y entrada de texto
+//         $voice = (new VoiceSelectionParams())
+//             ->setLanguageCode('es-ES') // Ajusta según el idioma necesario
+//             ->setName('es-ES-Wavenet-D'); // Ajusta según el modelo de voz necesario
+
+//         $audioConfig = (new AudioConfig())
+//             ->setAudioEncoding('MP3'); // Puedes ajustar el formato de audio según tus necesidades
+
+//         $synthesisInputText = (new SynthesisInput())
+//             ->setText($nombre);
+
+//         // Llamada al servicio de Text-to-Speech
+//         $response = $textToSpeechClient->synthesizeSpeech(
+//             $synthesisInputText,
+//             $voice,
+//             $audioConfig
+//         );
+
+//         // Guardar el audio generado en un archivo o reproducir directamente
+//         file_put_contents('path/to/audio.mp3', $response->getAudioContent());
+
+//         // Cerrar el cliente
+//         $textToSpeechClient->close();
+//     }
+// }
+
+//https://www.texvoz.com/blog/alternativas-a-google-cloud-text-to-speech
+
+
+
 }
